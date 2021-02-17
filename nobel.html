@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title>Nobel Prize Winners</title>
+    </head>
+          
+<style>
+
+    
+h1{
+   text-align: center;
+    padding-bottom: 50px;
+    color: white;
+    
+        
+        
+    }    
+h2{
+    color: darkgoldenrod;
+    font-size: 30px;
+        
+    }    
+    
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightyellow;
+    }  
+    
+div.tablePlaceholder{
+    text-align: center;
+}
+    
+div.nobelwinners, tr, td{
+    border: 2px solid;
+    border-color: black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+    height: auto;
+    width: auto;
+}    
+
+div.nobelwinners, th{
+    color: black;
+    font-size: 20px;
+        
+    }
+
+    
+p{
+    font-size: 18px;
+    font-weight: bolder;
+
+        
+    }    
+    
+form[type="radioButton"] {
+    margin-left:0px;
+    font-size: 15px;
+    font-size: 16px;
+
+}
+
+button {
+    background-color: lightgrey;
+    color: darkgoldenrod;
+    border: none;
+    padding: 6px 13px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold
+}
+
+img{
+
+        
+    }
+
+#container {
+  height: 400px;
+  width: 100%;
+  position: relative;
+}
+#image {
+
+    width:100%;
+    height: 400px;
+}
+#text {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    left: 15%;
+    top: 20%;
+}
+</style>
+    
+        <script src="nobel.js">
+
+        </script>
+        
+<body onload="loadJsonFile()">
+        
+        <div id="container">
+        <img id="image" src="golden.png">
+        <h1 id=text>NOBEL PRIZE WINNERS</h1>
+        </div>
+            
+
+    <H2>Select the year range and category:</H2>
+
+        <table id="fromToCat">
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Category</th>
+            </tr>
+            <tr>
+                <td><select id="selectYear" style="font-size:14px;"> </select></td>
+
+                <td><select id="selectYearTo" style="font-size:14px;"> </select></td>
+
+                <td><select id="selectCategory" style="font-size:14px;"> </select></td>
+                
+<!--    got information on  how to use submit buttons from w3schools tutorial  -->
+                
+                <td><button type="button" id="submitButton"onclick="onSubmit()">Submit</button></td>
+            </tr>
+
+        </table>
+        
+    
+<!--    got information on  how to use radio buttons from w3schools tutorial  -->
+    
+        <form type="radioButton">
+            <p>Gender:</p>
+              <input type="radio" name="gender" value="male" onclick="onRadioClick()">Male
+              <input type="radio" name="gender" value="female" onclick="onRadioClick()">Female
+              <input type="radio" name="gender" value="any" onclick="onRadioClick()">Any
+        </form>
+
+    
+        <div id="tablePlaceholder">
+        </div> 
+    
+        <div id="learnMore">
+        </div>
+
+
+
+
+    </body>
